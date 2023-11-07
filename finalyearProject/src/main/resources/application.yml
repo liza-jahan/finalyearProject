@@ -1,0 +1,34 @@
+#    spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQLDialect
+#
+spring:
+  application:
+    name: order-api
+  jpa:
+    hibernate:
+      ddl-auto: create
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect
+  datasource:
+    url: jdbc:mysql://localhost:3306/smartdiagnosis
+    username: root
+    password: root
+
+app:
+  jwt:
+    # Signing key for HS512 algorithm
+    # In http://www.allkeysgenerator.com/ you can generate all kinds of keys
+    secret:
+    expiration:
+      minutes: 10
+  cors:
+    allowed-origins: http://localhost:3000
+
+logging:
+  level:
+    org.springframework.security: DEBUG
+    # org.hibernate.SQL: DEBUG
+
+#    spring:
+#      main:
+#        web-application-type: none
